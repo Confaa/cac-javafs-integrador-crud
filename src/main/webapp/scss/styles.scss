@@ -1,0 +1,124 @@
+@import "colors";
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+  background-color: $mysty-blue;
+}
+.header {
+  background-color: $dark-blue;
+  &__logo {
+    height: 4rem;
+  }
+}
+.main {
+  padding: 1rem;
+  &__content-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem;
+  }
+}
+
+.card {
+  border: 1px solid $midnight-blue;
+  border-radius: $border-radius-default;
+  padding: 0.5rem;
+  &__img {
+    width: 100%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+.group-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  &--row {
+    flex-direction: row;
+    column-gap: 0.5rem;
+  }
+  &--column {
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  &__button,
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-default;
+    border: none;
+    padding: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    background-color: white;
+    transition: $transition;
+    &--w-100{
+      width: 100%;
+    }
+    &--select {
+      background-color: $selectButton;
+      color: white;
+      &:hover {
+        background-color: $selectButtonHover;
+      }
+    }
+    &--register {
+      background-color: $registerButton;
+      color: white;
+      &:hover {
+        background-color: $registerButtonHover;
+      }
+    }
+    &--delete {
+      background-color: $deleteButton;
+      color: white;
+      &:hover {
+        background-color: $deleteButtonHover;
+      }
+    }
+    &--modify {
+      background-color: $modifyButton;
+      color: black;
+      &:hover {
+        background-color: $modifyButtonHover;
+      }
+    }
+    &--disable {
+      opacity: 0.5;
+      &:hover {
+        cursor: initial;
+      }
+    }
+  }
+  &__svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    &--discard {
+      color: $deleteButton;
+    }
+    &--contact {
+      fill: $registerButton;
+    }
+  }
+}

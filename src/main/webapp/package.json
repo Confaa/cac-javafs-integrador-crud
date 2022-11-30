@@ -1,0 +1,17 @@
+{
+  "name": "cac-javafs-integrador-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/styles.scss css/styles.css",
+    "format": "prettier --write \"**/*.{html,js,jsx,ts,tsx,json,md,scss}\""
+  },
+  "author": "confaa",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^2.8.0",
+    "sass": "^1.56.1"
+  }
+}

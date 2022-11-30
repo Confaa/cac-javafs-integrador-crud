@@ -1,0 +1,126 @@
+/*group-buttons*/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #c3ceda;
+}
+
+.header {
+  background-color: #071330;
+}
+.header__logo {
+  height: 4rem;
+}
+
+.main {
+  padding: 1rem;
+}
+.main__content-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.card {
+  border: 1px solid #0c4160;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+}
+.card__img {
+  width: 100%;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__title {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.group-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.group-buttons--row {
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+.group-buttons--column {
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.group-buttons__button, .group-buttons__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+  border: none;
+  padding: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  transition: 300ms linear;
+}
+.group-buttons__button--w-100, .group-buttons__link--w-100 {
+  width: 100%;
+}
+.group-buttons__button--select, .group-buttons__link--select {
+  background-color: #0d6efd;
+  color: white;
+}
+.group-buttons__button--select:hover, .group-buttons__link--select:hover {
+  background-color: #0b5ed7;
+}
+.group-buttons__button--register, .group-buttons__link--register {
+  background-color: #198754;
+  color: white;
+}
+.group-buttons__button--register:hover, .group-buttons__link--register:hover {
+  background-color: #157347;
+}
+.group-buttons__button--delete, .group-buttons__link--delete {
+  background-color: #dc3545;
+  color: white;
+}
+.group-buttons__button--delete:hover, .group-buttons__link--delete:hover {
+  background-color: #c82333;
+}
+.group-buttons__button--modify, .group-buttons__link--modify {
+  background-color: #ffc107;
+  color: black;
+}
+.group-buttons__button--modify:hover, .group-buttons__link--modify:hover {
+  background-color: #ffca2c;
+}
+.group-buttons__button--disable, .group-buttons__link--disable {
+  opacity: 0.5;
+}
+.group-buttons__button--disable:hover, .group-buttons__link--disable:hover {
+  cursor: initial;
+}
+.group-buttons__svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.group-buttons__svg--discard {
+  color: #dc3545;
+}
+.group-buttons__svg--contact {
+  fill: #198754;
+}
+
+/*# sourceMappingURL=styles.css.map */

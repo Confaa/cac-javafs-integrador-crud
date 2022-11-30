@@ -1,0 +1,23 @@
+$xs: 0px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin interval($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin min($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin max($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
