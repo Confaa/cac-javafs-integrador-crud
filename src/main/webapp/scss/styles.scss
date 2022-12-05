@@ -13,8 +13,21 @@ body {
 }
 .header {
   background-color: $dark-blue;
+  display: flex;
+  align-items: center;
   &__logo {
     height: 4rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    &:hover {
+      color: white;
+    }
+    &--home {
+      margin-left: auto;
+    }
   }
 }
 .main {
@@ -73,7 +86,7 @@ body {
     cursor: pointer;
     background-color: white;
     transition: $transition;
-    &--w-100{
+    &--w-100 {
       width: 100%;
     }
     &--select {
@@ -120,5 +133,18 @@ body {
     &--contact {
       fill: $registerButton;
     }
+  }
+}
+
+.footer {
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+  &__text {
+    text-decoration: none;
+    color: white;
   }
 }

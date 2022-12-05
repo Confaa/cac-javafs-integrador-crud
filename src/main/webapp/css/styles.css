@@ -13,9 +13,22 @@ body {
 
 .header {
   background-color: #071330;
+  display: flex;
+  align-items: center;
 }
 .header__logo {
   height: 4rem;
+}
+.header__link {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+}
+.header__link:hover {
+  color: white;
+}
+.header__link--home {
+  margin-left: auto;
 }
 
 .main {
@@ -121,6 +134,19 @@ body {
 }
 .group-buttons__svg--contact {
   fill: #198754;
+}
+
+.footer {
+  background-color: #071330;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+}
+.footer__text {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
