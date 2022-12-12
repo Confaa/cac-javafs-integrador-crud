@@ -1,16 +1,14 @@
 package com.confaa.cacjavafsintegradorcrud.model;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 
-import javax.sql.DataSource;
+import javax.sql.*;
 import java.sql.Connection;
 import java.sql.SQLException;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 public class Conexion {
 
-    private static final String URL_DB = "jdbc:mariadb://root:1234@localhost:3306/cac?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-
-    private static Connection connection;
+    private static final String URL_DB = "jdbc:mysql://root:root@localhost:3307/mysql?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
 
     private static BasicDataSource dataSource;
 

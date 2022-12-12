@@ -25,7 +25,11 @@ public class AppServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req,
                          HttpServletResponse res) throws ServletException, IOException {
-        req.setAttribute("listaAnimales", model.getAnimales());
+        try {
+            req.setAttribute("listaAnimales", model.getAnimales());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         req.getRequestDispatcher(URI_LIST).forward(req, res);
     }
 }
