@@ -3,13 +3,13 @@ package com.confaa.cacjavafsintegradorcrud.model;
 import java.util.List;
 
 public interface Model {
-    public List<Motor> getMotores();
+    public List<Animal> getAnimales();
 
-    public Motor getMotor(int id);
+    public Animal getAnimal(int id);
 
-    public int addMotor(Motor motor);
+    public int addAnimal(Animal motor);
 
-    public int updateMotor(Motor motor);
+    public int updateAnimal(Animal motor);
 
-    public int deleteMotor(int id);
+    public int deleteAnimal(int id);
 }

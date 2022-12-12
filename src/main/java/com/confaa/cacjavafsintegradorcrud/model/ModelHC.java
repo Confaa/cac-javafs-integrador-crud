@@ -4,46 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModelHC implements Model {
-    private List<Motor> motores;
+    private List<Animal> animales;
 
     public ModelHC() {
-        this.motores = new ArrayList<>();
+        this.animales = new ArrayList<>();
     }
 
     @Override
-    public List<Motor> getMotores() {
-        return this.motores;
+    public List<Animal> getAnimales() {
+        return this.animales;
     }
 
     @Override
-    public Motor getMotor(int id) {
-        Motor motor = null;
-        for (int i = 0; i < this.motores.size(); i++) {
-            if (this.motores.get(i).getIdMotor() == id) {
-                motor = this.motores.get(i);
+    public Animal getAnimal(int id) {
+        Animal animal = null;
+        for (int i = 0; i < this.animales.size(); i++) {
+            if (this.animales.get(i).getIdMascota() == id) {
+                animal = this.animales.get(i);
             }
         }
-        return motor;
+        return animal;
     }
 
     @Override
-    public int addMotor(Motor motor) {
-        this.motores.add(motor);
+    public int addAnimal(Animal animal) {
+        this.animales.add(animal);
         return 0;
     }
 
     @Override
-    public int updateMotor(Motor motor) {
-        Motor motorBuscado = getMotor(motor.getIdMotor());
-        int i = this.motores.indexOf(motorBuscado);
-        this.motores.set(i, motor);
+    public int updateAnimal(Animal animal) {
+        Animal animalBuscado = getAnimal(animal.getIdMascota());
+        int i = this.animales.indexOf(animalBuscado);
+        this.animales.set(i, animal);
         return 0;
     }
 
     @Override
-    public int deleteMotor(int id) {
-        Motor motorBuscado = getMotor(id);
-        this.motores.remove(motorBuscado);
+    public int deleteAnimal(int id) {
+        Animal animalBuscado = getAnimal(id);
+        this.animales.remove(animalBuscado);
         return 0;
     }
 }

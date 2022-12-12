@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    private static final String URL_DB = "jdbc:mariadb://root:root@localhost:3306/cac_crud_bd?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL_DB = "jdbc:mariadb://root:1234@localhost:3306/cac?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
 
     private static Connection connection;
 

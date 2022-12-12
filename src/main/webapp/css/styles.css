@@ -11,6 +11,12 @@ body {
   background-color: #c3ceda;
 }
 
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 .header {
   background-color: #071330;
   display: flex;
@@ -44,12 +50,12 @@ body {
 .card {
   border: 1px solid #0c4160;
   border-radius: 0.2rem;
-  padding: 0.5rem;
 }
 .card__img {
   width: 100%;
 }
 .card__content {
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,11 +97,11 @@ body {
 .group-buttons__button--w-100, .group-buttons__link--w-100 {
   width: 100%;
 }
-.group-buttons__button--select, .group-buttons__link--select {
+.group-buttons__button--watch, .group-buttons__link--watch {
   background-color: #0d6efd;
   color: white;
 }
-.group-buttons__button--select:hover, .group-buttons__link--select:hover {
+.group-buttons__button--watch:hover, .group-buttons__link--watch:hover {
   background-color: #0b5ed7;
 }
 .group-buttons__button--register, .group-buttons__link--register {
