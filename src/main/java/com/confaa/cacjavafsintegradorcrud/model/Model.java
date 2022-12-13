@@ -7,9 +7,9 @@ public interface Model {
 
     public Animal getAnimal(int id);
 
-    public int addAnimal(Animal motor);
+    public int addAnimal(Animal animal);
 
-    public int updateAnimal(Animal motor);
+    public int updateAnimal(Animal animal);
 
     public int deleteAnimal(int id);
 }

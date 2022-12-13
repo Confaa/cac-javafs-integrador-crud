@@ -8,7 +8,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 public class Conexion {
 
-    private static final String URL_DB = "jdbc:mysql://root:root@localhost:3307/mysql?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL_DB = "jdbc:mysql://@localhost:3306/cac?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
 
     private static BasicDataSource dataSource;
 
@@ -20,6 +20,8 @@ public class Conexion {
             try {
                 dataSource = new BasicDataSource();
                 dataSource.setUrl(URL_DB);
+                dataSource.setUsername("root");
+                dataSource.setPassword("1234");
                 dataSource.setInitialSize(50);
             } catch (Exception ex) {
                 throw new RuntimeException(

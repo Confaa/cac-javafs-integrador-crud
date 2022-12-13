@@ -4,6 +4,7 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -17,27 +18,34 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
+
 .header {
   background-color: $dark-blue;
   display: flex;
   align-items: center;
+
   &__logo {
     height: 4rem;
   }
+
   &__link {
     text-decoration: none;
     color: white;
     padding: 1rem;
+
     &:hover {
       color: white;
     }
+
     &--home {
       margin-left: auto;
     }
   }
 }
+
 .main {
   padding: 1rem;
+
   &__content-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -49,17 +57,26 @@ body {
 .card {
   border: 1px solid $midnight-blue;
   border-radius: $border-radius-default;
+
   &__img {
     width: 100%;
+    height: 10rem;
+    object-fit: cover;
   }
+
   &__content {
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   &__title {
     font-size: 0.9rem;
+    margin: 0;
+  }
+
+  &__species {
     margin: 0;
   }
 }
@@ -69,14 +86,17 @@ body {
   justify-content: center;
   width: 100%;
   margin-top: 0.5rem;
+
   &--row {
     flex-direction: row;
     column-gap: 0.5rem;
   }
+
   &--column {
     flex-direction: column;
     row-gap: 0.5rem;
   }
+
   &__button,
   &__link {
     display: flex;
@@ -92,50 +112,65 @@ body {
     cursor: pointer;
     background-color: white;
     transition: $transition;
+
     &--w-100 {
       width: 100%;
     }
+
     &--watch {
       background-color: $watchButton;
       color: white;
+
       &:hover {
         background-color: $watchButtonHover;
       }
     }
+
     &--register {
       background-color: $registerButton;
       color: white;
+
       &:hover {
         background-color: $registerButtonHover;
       }
     }
-    &--delete {
+
+    &--delete,
+    &--exit {
       background-color: $deleteButton;
       color: white;
+
       &:hover {
         background-color: $deleteButtonHover;
       }
     }
+
     &--modify {
       background-color: $modifyButton;
       color: black;
+
       &:hover {
         background-color: $modifyButtonHover;
       }
     }
+
     &--disable {
       opacity: 0.5;
+
       &:hover {
         cursor: initial;
       }
     }
   }
+
   &__svg {
     height: 1.5rem;
     width: 1.5rem;
+
     &--discard {
       color: $deleteButton;
     }
+
     &--contact {
       fill: $registerButton;
     }
@@ -149,8 +184,35 @@ body {
   align-items: center;
   color: white;
   padding: 1rem;
+
   &__text {
     text-decoration: none;
     color: white;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 10rem;
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1rem;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__group-inputs {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 1rem;
+  }
+  &__label-input {
+    display: flex;
+    flex-direction: column;
   }
 }

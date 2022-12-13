@@ -7,10 +7,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 public class ModelMariaDB implements Model {
 
     private static final String GET_ALL_ANIMALS_QUERY = "SELECT * FROM animales";
-    private static final String GET_ANIMAL_QUERY = "SELECT * FROM animales WHERE id = ?";
+    private static final String GET_ANIMAL_QUERY = "SELECT * FROM animales WHERE idAnimal = ?";
+    private static final String GET_UPDATE_ANIMAL_QUERY = "UPDATE animales SET especie=?, nombre=?,raza=?, nacimiento=? WHERE idAnimal=?";
 
     @Override
     public List<Animal> getAnimales() throws ClassNotFoundException {
@@ -33,16 +35,46 @@ public class ModelMariaDB implements Model {
 
     @Override
     public Animal getAnimal(int id) {
-        return null;
+        Animal animal = null;
+
+        try (Connection con = Conexion.getConnection(); PreparedStatement ps = con.prepareStatement(
+                GET_ANIMAL_QUERY);) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery();) {
+                rs.next();
+                animal = rsToAnimal(rs);
+            } catch (SQLException e) {
+                throw new RuntimeException("Error de SQL", e);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error al obtener animal por ID", e);
+        }
+
+        return animal;
     }
 
     @Override
-    public int addAnimal(Animal motor) {
+    public int addAnimal(Animal animal) {
         return 0;
     }
 
     @Override
-    public int updateAnimal(Animal motor) {
+    public int updateAnimal(Animal animal) {
+        try (Connection con = Conexion.getConnection(); PreparedStatement ps = con.prepareStatement(
+                GET_UPDATE_ANIMAL_QUERY);) {
+            ps.setString(1, animal.getEspecie());
+            ps.setString(2, animal.getNombre());
+            ps.setString(3, animal.getRaza());
+            ps.setString(4, animal.getNacimiento());
+            ps.setInt(5, animal.getIdAnimal());
+            int rs = ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error de SQL", e);
+        } catch (Exception e) {
+            throw new RuntimeException("Error al intentar actualizar el animal",
+                                       e);
+        }
+
         return 0;
     }
 
@@ -56,7 +88,7 @@ public class ModelMariaDB implements Model {
         String especie = resultSet.getString("especie");
         String nombre = resultSet.getString("nombre");
         String raza = resultSet.getString("raza");
-        Date nacimiento = resultSet.getDate("nacimiento");
+        String nacimiento = resultSet.getString("nacimiento");
         String foto = resultSet.getString("foto");
         return new Animal(id, nombre, especie, raza, nacimiento, foto);
     }

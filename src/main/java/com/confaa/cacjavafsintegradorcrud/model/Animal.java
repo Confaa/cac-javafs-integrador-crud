@@ -3,24 +3,24 @@ package com.confaa.cacjavafsintegradorcrud.model;
 import java.util.Date;
 
 public class Animal {
-    private int idMascota;
+    private int idAnimal;
     private String nombre;
     private String especie;
     private String raza;
-    private Date nacimiento;
+    private String nacimiento;
 
     private String foto;
 
     public Animal() {
     }
 
-    public Animal(int idMascota) {
-        this.idMascota = idMascota;
+    public Animal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
-    public Animal(int idMascota, String nombre, String especie, String raza,
-                  Date nacimiento, String foto) {
-        this.idMascota = idMascota;
+    public Animal(int idAnimal, String nombre, String especie, String raza,
+                  String nacimiento, String foto) {
+        this.idAnimal = idAnimal;
         this.nombre = nombre;
         this.especie = especie;
         this.raza = raza;
@@ -28,12 +28,21 @@ public class Animal {
         this.foto = foto;
     }
 
-    public int getIdMascota() {
-        return idMascota;
+    public Animal(String nombre, String especie, String raza,
+                  String nacimiento, String foto) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.nacimiento = nacimiento;
+        this.foto = foto;
     }
 
-    public void setIdMascota(int idMascota) {
-        this.idMascota = idMascota;
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
     public String getNombre() {
@@ -60,11 +69,11 @@ public class Animal {
         this.raza = raza;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
     }
 
@@ -79,7 +88,7 @@ public class Animal {
     @Override
     public String toString() {
         return "Animal{" +
-               "idMascota=" + idMascota +
+               "idMascota=" + idAnimal +
                ", nombre='" + nombre + '\'' +
                ", especie='" + especie + '\'' +
                ", raza='" + raza + '\'' +

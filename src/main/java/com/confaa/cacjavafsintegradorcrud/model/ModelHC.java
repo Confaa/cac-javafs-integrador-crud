@@ -19,7 +19,7 @@ public class ModelHC implements Model {
     public Animal getAnimal(int id) {
         Animal animal = null;
         for (int i = 0; i < this.animales.size(); i++) {
-            if (this.animales.get(i).getIdMascota() == id) {
+            if (this.animales.get(i).getIdAnimal() == id) {
                 animal = this.animales.get(i);
             }
         }
@@ -34,7 +34,7 @@ public class ModelHC implements Model {
 
     @Override
     public int updateAnimal(Animal animal) {
-        Animal animalBuscado = getAnimal(animal.getIdMascota());
+        Animal animalBuscado = getAnimal(animal.getIdAnimal());
         int i = this.animales.indexOf(animalBuscado);
         this.animales.set(i, animal);
         return 0;
