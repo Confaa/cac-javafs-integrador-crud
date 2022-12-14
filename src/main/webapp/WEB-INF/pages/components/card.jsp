@@ -1,5 +1,5 @@
 <span class="card">
-            <img class="card__img" src="https://picsum.photos/1000" alt=""/>
+            <img class="card__img" src="${param.foto}" alt=""/>
             <span class="card__content">
               <h2 class="card__title">${param.nombre}</h2>
               <p class="card__species">${param.especie}</p>

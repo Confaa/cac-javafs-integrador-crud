@@ -10,9 +10,9 @@
   <jsp:include page="layout/header.jsp"/>
   <main class="main"><h1 class="main__title">Listado de Animales</h1>
     <div class="group-buttons">
-      <button class="group-buttons__button group-buttons__button--register">
+      <a href="${pageContext.request.contextPath}/app?action=create" class="group-buttons__link group-buttons__link--register">
         Agregar Motor
-      </button>
+      </a>
     </div>
     <div class="main__content-cards">
       <c:choose>
@@ -22,6 +22,7 @@
               <jsp:param name="nombre" value="${animal.getNombre()}"/>
               <jsp:param name="especie" value="${animal.getEspecie()}"/>
               <jsp:param name="id" value="${animal.getIdAnimal()}"/>
+              <jsp:param name="foto" value="${animal.getFoto()}"/>
             </jsp:include>
           </c:forEach>
         </c:when>

@@ -12,7 +12,8 @@ public class ModelMariaDB implements Model {
 
     private static final String GET_ALL_ANIMALS_QUERY = "SELECT * FROM animales";
     private static final String GET_ANIMAL_QUERY = "SELECT * FROM animales WHERE idAnimal = ?";
-    private static final String GET_UPDATE_ANIMAL_QUERY = "UPDATE animales SET especie=?, nombre=?,raza=?, nacimiento=? WHERE idAnimal=?";
+    private static final String UPDATE_ANIMAL_QUERY = "UPDATE animales SET especie=?, nombre=?,raza=?, nacimiento=?, foto=? WHERE idAnimal=?";
+    private static final String ADD_ANIMAL_QUERY = "INSERT INTO animales (especie, nombre, raza, nacimiento, foto) VALUES (?,?,?,?,?)";
 
     @Override
     public List<Animal> getAnimales() throws ClassNotFoundException {
@@ -55,18 +56,32 @@ public class ModelMariaDB implements Model {
 
     @Override
     public int addAnimal(Animal animal) {
+
+        try (Connection con = Conexion.getConnection(); PreparedStatement ps = con.prepareStatement(
+                ADD_ANIMAL_QUERY);) {
+            ps.setString(1, animal.getEspecie());
+            ps.setString(2, animal.getNombre());
+            ps.setString(3, animal.getRaza());
+            ps.setString(4, animal.getNacimiento());
+            ps.setString(5, animal.getFoto());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error de SQL", e);
+        }
+
         return 0;
     }
 
     @Override
     public int updateAnimal(Animal animal) {
         try (Connection con = Conexion.getConnection(); PreparedStatement ps = con.prepareStatement(
-                GET_UPDATE_ANIMAL_QUERY);) {
+                UPDATE_ANIMAL_QUERY);) {
             ps.setString(1, animal.getEspecie());
             ps.setString(2, animal.getNombre());
             ps.setString(3, animal.getRaza());
             ps.setString(4, animal.getNacimiento());
-            ps.setInt(5, animal.getIdAnimal());
+            ps.setString(5, animal.getFoto());
+            ps.setInt(6, animal.getIdAnimal());
             int rs = ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error de SQL", e);
