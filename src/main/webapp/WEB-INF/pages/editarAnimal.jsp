@@ -11,11 +11,11 @@
   <main class="main">
     <form
         action="${pageContext.request.contextPath}/app?action=update&id=${animalAEditar.idAnimal}"
-        method="post" class="form">
+        method="post" class="form" id="form-agregar-alumno">
 
       <div class="form__layout">
         <div class="form__img-contain">
-          <img class="form__img" src="${animalAEditar.foto}" alt="">
+          <img class="form__img" id="form__img" src="${animalAEditar.foto}" alt="">
         </div>
         <div class="form__group-inputs">
       <span class="form__label-input">
@@ -38,6 +38,8 @@
       <input type="text" name="nacimiento" id="nacimiento"
              value="${animalAEditar.nacimiento}"/>
         </span>
+          <input class="form__input" id="file" type="file" accept="image/*"/>
+          <input type="hidden" id="fotoBase64" name="fotoBase64"/>
           <span class="group-buttons group-buttons--row"><a
               href="${pageContext.request.contextPath}/app"
               class="group-buttons__link group-buttons__link--exit group-buttons__button--w-100">Atras</a>
@@ -51,7 +53,8 @@
   </main>
   <jsp:include page="layout/footer.jsp"/>
 </div>
-
+<script src="js/script.js"></script>
+<script src="js/fotobase64.js"></script>
 </body>
 
 

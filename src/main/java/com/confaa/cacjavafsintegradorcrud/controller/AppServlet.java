@@ -43,6 +43,7 @@ public class AppServlet extends HttpServlet {
                 break;
             case "create":
                 req.getRequestDispatcher(URI_CREATE).forward(req, res);
+                break;
         }
 
         try {
@@ -55,7 +56,7 @@ public class AppServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req,
-                          HttpServletResponse resp) throws ServletException, IOException {
+                          HttpServletResponse res) throws ServletException, IOException {
         String action = req.getParameter("action");
         String idReq = req.getParameter("id");
         int id = (idReq == null ? -1 : Integer.parseInt(idReq));
@@ -66,12 +67,19 @@ public class AppServlet extends HttpServlet {
                 Animal animal = model.getAnimal(id);
                 cargarAnimalSegunParams(animal, req);
                 model.updateAnimal(animal);
+                break;
             case "add":
                 Animal animalAux = new Animal();
                 cargarAnimalSegunParams(animalAux, req);
                 model.addAnimal(animalAux);
+                break;
         }
-
+        try {
+            req.setAttribute("listaAnimales", model.getAnimales());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        req.getRequestDispatcher(URI_LIST).forward(req, res);
     }
 
     private void cargarAnimalSegunParams(Animal animal,

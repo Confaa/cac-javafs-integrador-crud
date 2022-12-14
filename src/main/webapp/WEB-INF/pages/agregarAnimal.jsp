@@ -41,7 +41,7 @@
       />
 
         </span>
-          <input class="form__input" id="file" type="file" accept="image/*">
+          <input class="form__input" id="file" type="file" accept="image/*"/>
           <input type="hidden" id="fotoBase64" name="fotoBase64"/>
           <span class="group-buttons group-buttons--row"><a
               href="${pageContext.request.contextPath}/app"
