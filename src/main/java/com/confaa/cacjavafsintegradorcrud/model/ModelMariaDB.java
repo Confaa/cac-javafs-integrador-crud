@@ -14,6 +14,7 @@ public class ModelMariaDB implements Model {
     private static final String GET_ANIMAL_QUERY = "SELECT * FROM animales WHERE idAnimal = ?";
     private static final String UPDATE_ANIMAL_QUERY = "UPDATE animales SET especie=?, nombre=?,raza=?, nacimiento=?, foto=? WHERE idAnimal=?";
     private static final String ADD_ANIMAL_QUERY = "INSERT INTO animales (especie, nombre, raza, nacimiento, foto) VALUES (?,?,?,?,?)";
+    private static final String DELETE_ANIMAL_QUERY = "DELETE FROM animales WHERE idAnimal=?";
 
     @Override
     public List<Animal> getAnimales() throws ClassNotFoundException {
@@ -95,6 +96,16 @@ public class ModelMariaDB implements Model {
 
     @Override
     public int deleteAnimal(int id) {
+        try (Connection con = Conexion.getConnection(); PreparedStatement ps = con.prepareStatement(
+                DELETE_ANIMAL_QUERY);) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error de SQL", e);
+        } catch (Exception e) {
+            throw new RuntimeException("Error al intentar eliminar el animal",
+                                       e);
+        }
         return 0;
     }
 

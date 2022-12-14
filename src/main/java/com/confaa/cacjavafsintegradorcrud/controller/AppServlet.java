@@ -20,6 +20,7 @@ public class AppServlet extends HttpServlet {
     private static final String URI_LIST = "WEB-INF/pages/listaAnimales.jsp";
     private static final String URI_EDIT = "WEB-INF/pages/editarAnimal.jsp";
     private static final String URI_CREATE = "WEB-INF/pages/agregarAnimal.jsp";
+    private static final String URI_DELETE = "WEB-INF/pages/borrarAnimal.jsp";
 
     @Override
     public void init() throws ServletException {
@@ -44,6 +45,10 @@ public class AppServlet extends HttpServlet {
             case "create":
                 req.getRequestDispatcher(URI_CREATE).forward(req, res);
                 break;
+            case "remove":
+                Animal animalAux = model.getAnimal(id);
+                req.setAttribute("animalABorrar", animalAux);
+                req.getRequestDispatcher(URI_DELETE).forward(req, res);
         }
 
         try {
@@ -72,6 +77,9 @@ public class AppServlet extends HttpServlet {
                 Animal animalAux = new Animal();
                 cargarAnimalSegunParams(animalAux, req);
                 model.addAnimal(animalAux);
+                break;
+            case "delete":
+                model.deleteAnimal(id);
                 break;
         }
         try {

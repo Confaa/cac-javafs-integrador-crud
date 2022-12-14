@@ -15,7 +15,8 @@
 
       <div class="form__layout">
         <div class="form__img-contain">
-          <img class="form__img" id="form__img" src="${animalAEditar.foto}" alt="">
+          <img class="form__img" id="form__img" src="${animalAEditar.foto}"
+               alt="">
         </div>
         <div class="form__group-inputs">
       <span class="form__label-input">
@@ -39,7 +40,8 @@
              value="${animalAEditar.nacimiento}"/>
         </span>
           <input class="form__input" id="file" type="file" accept="image/*"/>
-          <input type="hidden" id="fotoBase64" name="fotoBase64"/>
+          <input type="hidden" id="fotoBase64" name="fotoBase64"
+                 value="${animalAEditar.foto}"/>
           <span class="group-buttons group-buttons--row"><a
               href="${pageContext.request.contextPath}/app"
               class="group-buttons__link group-buttons__link--exit group-buttons__button--w-100">Atras</a>
