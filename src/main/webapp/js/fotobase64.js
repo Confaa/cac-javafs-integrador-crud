@@ -95,10 +95,7 @@ const handleForm = async (event) => {
         console.log("Se está procesando la foto");
         return;
     }
-    console.log(document.getElementById("fotoBase64").value)
-    if (!document.getElementById("fotoBase64").value) {
-        document.getElementById("fotoBase64").value = fotoCodif || "";
-    }
+    document.getElementById("fotoBase64").value = fotoCodif || "";
     form.submit();
 };
 
