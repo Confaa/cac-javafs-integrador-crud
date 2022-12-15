@@ -13,7 +13,6 @@ let isFileReady = true;
 
 const handleChangeInputFile = async (event) => {
     isFileReady = false;
-
     const foto = fotoInput.files[0];
     if (foto) {
         let fileName = foto.name.split(".")[0];
@@ -95,9 +94,10 @@ const handleForm = async (event) => {
         console.log("Se está procesando la foto");
         return;
     }
-    document.getElementById("fotoBase64").value = fotoCodif || "";
+    if (fotoCodif!== document.getElementById("fotoBase64").value && fotoCodif) {
+        document.getElementById("fotoBase64").value = fotoCodif || "";
+    }
     form.submit();
 };
-
 fotoInput.addEventListener("change", handleChangeInputFile);
 form.addEventListener("submit", handleForm);
