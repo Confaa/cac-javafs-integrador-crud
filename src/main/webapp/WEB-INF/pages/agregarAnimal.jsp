@@ -9,9 +9,10 @@
 <div class="layout">
   <jsp:include page="layout/header.jsp"/>
   <main class="main">
+    <h1 class="main__title">Agregar animal</h1>
     <form
         action="${pageContext.request.contextPath}/app?action=add"
-        method="post" id="form-agregar-alumno" class="form">
+        method="post" id="form-agregar-editar" class="form">
 
       <div class="form__layout">
         <div class="form__img-contain">

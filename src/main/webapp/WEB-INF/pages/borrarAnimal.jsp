@@ -9,6 +9,7 @@
 <div class="layout">
   <jsp:include page="layout/header.jsp"/>
   <main class="main">
+    <h1 class="main__title">Borrar animal</h1>
     <form
         action="${pageContext.request.contextPath}/app?action=delete&id=${animalABorrar.idAnimal}"
         method="post" class="form">

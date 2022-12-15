@@ -8,15 +8,10 @@
 <body>
 <div class="layout">
   <jsp:include page="layout/header.jsp"/>
-  <main class="main"><h1 class="main__title">Listado de Animales</h1>
-    <div class="group-buttons">
-      <a href="${pageContext.request.contextPath}/app?action=create" class="group-buttons__link group-buttons__link--register">
-        Agregar Motor
-      </a>
-    </div>
-    <div class="main__content-cards">
-      <c:choose>
-        <c:when test="${listaAnimales !=null && !listaAnimales.isEmpty()}">
+  <main class="main main--others"><h1 class="main__title">Listado de Animales</h1>
+    <c:choose>
+      <c:when test="${listaAnimales !=null && !listaAnimales.isEmpty()}">
+        <div class="main__content-cards">
           <c:forEach items="${listaAnimales}" var="animal">
             <jsp:include page="components/card.jsp">
               <jsp:param name="nombre" value="${animal.getNombre()}"/>
@@ -25,11 +20,17 @@
               <jsp:param name="foto" value="${animal.getFoto()}"/>
             </jsp:include>
           </c:forEach>
-        </c:when>
-        <c:otherwise>
-          <p>No hay animales que mostrar</p>
-        </c:otherwise>
-      </c:choose>
+        </div>
+      </c:when>
+      <c:otherwise>
+        <p class="main__no-animals">No hay animales que mostrar</p>
+      </c:otherwise>
+    </c:choose>
+    <div class="group-buttons">
+      <a href="${pageContext.request.contextPath}/app?action=create"
+         class="group-buttons__link group-buttons__link--register">
+        Agregar Motor
+      </a>
     </div>
   </main>
   <jsp:include page="layout/footer.jsp"/>

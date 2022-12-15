@@ -6,7 +6,7 @@
                 <span class="group-buttons group-buttons--row">
               <a
                   class="group-buttons__button group-buttons__button--watch"
-                  href="${pageContext.request.contextPath}/app"
+                  href="${pageContext.request.contextPath}/app?action=watch&id=${param.id}"
               >
                 Ver
               </a>

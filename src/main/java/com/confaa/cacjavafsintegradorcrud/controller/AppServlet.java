@@ -21,6 +21,7 @@ public class AppServlet extends HttpServlet {
     private static final String URI_EDIT = "WEB-INF/pages/editarAnimal.jsp";
     private static final String URI_CREATE = "WEB-INF/pages/agregarAnimal.jsp";
     private static final String URI_DELETE = "WEB-INF/pages/borrarAnimal.jsp";
+    private static final String URI_WATCH = "WEB-INF/pages/verAnimal.jsp";
 
     @Override
     public void init() throws ServletException {
@@ -49,14 +50,20 @@ public class AppServlet extends HttpServlet {
                 Animal animalAux = model.getAnimal(id);
                 req.setAttribute("animalABorrar", animalAux);
                 req.getRequestDispatcher(URI_DELETE).forward(req, res);
+                break;
+            case "watch":
+                Animal animalAux2 = model.getAnimal(id);
+                req.setAttribute("animalAVer", animalAux2);
+                req.getRequestDispatcher(URI_WATCH).forward(req, res);
+                break;
+            default:
+                try {
+                    req.setAttribute("listaAnimales", model.getAnimales());
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                req.getRequestDispatcher(URI_LIST).forward(req, res);
         }
-
-        try {
-            req.setAttribute("listaAnimales", model.getAnimales());
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        req.getRequestDispatcher(URI_LIST).forward(req, res);
     }
 
     @Override
