@@ -8,7 +8,7 @@
 <div class="layout">
   <jsp:include page="WEB-INF/pages/layout/header.jsp"/>
   <main class="main main--index">
-    <h1 class="main__title">WebApp Java MVC con base de datos MariaDB</h1>
+    <h1 class="main__title">WebApp Java MVC con base de datos MariaDB (pero usando el conector de MySQL)</h1>
     <p class="main__description">Este es un CRUD (Create, Read, Update, Delete) creado como proyecto final
       para el curso Codo a Codo 4.0 Java FullStack</p>
     <div class="group-buttons--row"><a

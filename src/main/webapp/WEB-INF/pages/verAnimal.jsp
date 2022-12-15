@@ -18,10 +18,11 @@
         <p class="watch__text">Raza: ${animalAVer.raza}</p>
         <p class="watch__text">Fecha de nacimiento: ${animalAVer.nacimiento}</p>
         <div class="group-buttons group-buttons--row">
-        <a href="${pageContext.request.contextPath}/app"
-           class="group-buttons__link group-buttons__link--exit group-buttons__link--w-100">Atras</a>
-        <a href="${pageContext.request.contextPath}/app?action=edit&id=${animalAVer.idAnimal}"
-           class="group-buttons__link group-buttons__link--modify group-buttons__link--w-100">Modificar</a></div>
+          <a href="${pageContext.request.contextPath}/app"
+             class="group-buttons__link group-buttons__link--exit group-buttons__link--w-100">Atras</a>
+          <a href="${pageContext.request.contextPath}/app?action=edit&id=${animalAVer.idAnimal}"
+             class="group-buttons__link group-buttons__link--modify group-buttons__link--w-100">Modificar</a>
+        </div>
       </div>
 
     </div>

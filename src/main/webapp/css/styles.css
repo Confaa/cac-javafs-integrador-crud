@@ -52,7 +52,7 @@ body {
   align-items: flex-start;
 }
 .main__title {
-  margin: 0;
+  margin: 0 0 1rem 0;
 }
 .main__content-cards {
   display: flex;
@@ -200,6 +200,7 @@ body {
 }
 .form__img {
   width: 100%;
+  max-height: 25rem;
 }
 .form__group-inputs {
   display: flex;
@@ -229,10 +230,13 @@ body {
   flex-direction: column;
   height: 100%;
 }
+.confirmation-delete__img {
+  max-height: 25rem;
+}
 
 .watch {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
   gap: 1rem;
 }
 .watch__img {
@@ -251,15 +255,24 @@ body {
   .form__layout {
     grid-template-columns: 1fr;
   }
+  .watch {
+    grid-template-columns: 1fr;
+  }
 }
 @media screen and (min-width: 769px) and (max-width: 1200px) {
   .form__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .watch {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (min-width: 1201px) {
   .form__layout {
     grid-template-columns: 2fr 3fr;
+  }
+  .watch {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

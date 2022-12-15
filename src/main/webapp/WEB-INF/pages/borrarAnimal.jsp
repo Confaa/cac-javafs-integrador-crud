@@ -14,7 +14,7 @@
         action="${pageContext.request.contextPath}/app?action=delete&id=${animalABorrar.idAnimal}"
         method="post" class="form">
       <div class="confirmation-delete">
-        <img src="${animalABorrar.foto}" alt=""/>
+        <img class="confirmation-delete__img" src="${animalABorrar.foto}" alt=""/>
         <span class="confirmation-delete__content">
       <p>Esta seguro que quiere borrar a ${animalABorrar.nombre}?</p>
       <span class="group-buttons group-buttons--row">

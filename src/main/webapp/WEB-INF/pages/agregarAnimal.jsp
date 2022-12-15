@@ -38,7 +38,7 @@
         </span>
           <span class="form__label-input">
       <label for="nacimiento">Fecha de nacimiento: </label>
-      <input class="form__input" type="text" name="nacimiento" id="nacimiento"
+      <input class="form__input" type="date" name="nacimiento" id="nacimiento"
              required/>
 
         </span>

@@ -37,7 +37,7 @@
         </span>
           <span class="form__label-input">
       <label for="nacimiento">Fecha de nacimiento: </label>
-      <input type="text" class="form__input" name="nacimiento" id="nacimiento"
+      <input type="date" class="form__input" name="nacimiento" id="nacimiento"
              value="${animalAEditar.nacimiento}" required/>
         </span>
           <input class="form__input" id="file" type="file" accept="image/*"/>
