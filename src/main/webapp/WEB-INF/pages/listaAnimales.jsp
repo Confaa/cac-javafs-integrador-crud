@@ -29,7 +29,7 @@
     <div class="group-buttons">
       <a href="${pageContext.request.contextPath}/app?action=create"
          class="group-buttons__link group-buttons__link--register">
-        Agregar Motor
+        Agregar animal
       </a>
     </div>
   </main>

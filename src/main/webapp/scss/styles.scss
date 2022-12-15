@@ -1,5 +1,6 @@
 @import "colors";
 @import "variables";
+@import "breakpoints";
 
 * {
   box-sizing: border-box;
@@ -64,10 +65,11 @@ body {
   }
 
   &__content-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin: 1rem;
+    justify-content: center;
   }
 
   &__no-animals {
@@ -80,6 +82,8 @@ body {
   border-radius: $border-radius-default;
   box-shadow: $box-shadow-default;
   transition: $transition;
+  width: 18rem;
+  height: 19.15rem;
 
   &__img {
     width: 100%;
@@ -224,11 +228,10 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  margin: 0 10rem;
+  margin: 0 auto;
 
   &__layout {
     display: grid;
-    grid-template-columns: 1fr 2fr;
     column-gap: 1rem;
     align-items: center;
   }
@@ -241,7 +244,7 @@ body {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    gap: 1rem;
+    gap: .5rem;
   }
 
   &__label-input {
@@ -251,6 +254,14 @@ body {
 
   &__input {
     border-radius: 5px;
+    padding: .5rem;
+    outline: none;
+    border: 2px solid rgba(gray, .5);
+    transition: 300ms;
+
+    &:focus {
+      border: 2px solid $dark-blue;
+    }
   }
 }
 
@@ -276,7 +287,35 @@ body {
     flex-direction: column;
     justify-content: center;
   }
-  &__text{
+
+  &__text {
     margin: 0 0 1rem 0;
+  }
+}
+
+
+@include min($md) {
+  .form {
+    &__layout {
+      grid-template-columns: 1fr;
+
+    }
+  }
+}
+
+@include interval($md+1, $xl) {
+  .form {
+    &__layout {
+      grid-template-columns: 1fr 1fr;
+
+    }
+  }
+}
+
+@include min($xl+1) {
+  .form {
+    &__layout {
+      grid-template-columns: 2fr 3fr;
+    }
   }
 }

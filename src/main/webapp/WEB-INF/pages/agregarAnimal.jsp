@@ -24,22 +24,22 @@
       <span class="form__label-input">
       <label for="nombre">Nombre: </label>
       <input class="form__input" type="text" name="nombre" id="nombre"
-      />
+             required/>
         </span>
           <span class="form__label-input">
       <label for="especie">Especie: </label>
       <input class="form__input" type="text" name="especie" id="especie"
-      />
+             required/>
         </span>
           <span class="form__label-input">
       <label for="raza">Raza: </label>
       <input class="form__input" type="text" name="raza" id="raza"
-      />
+             required/>
         </span>
           <span class="form__label-input">
       <label for="nacimiento">Fecha de nacimiento: </label>
       <input class="form__input" type="text" name="nacimiento" id="nacimiento"
-      />
+             required/>
 
         </span>
           <input class="form__input" id="file" type="file" accept="image/*"/>

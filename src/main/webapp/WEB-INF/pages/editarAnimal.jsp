@@ -22,23 +22,23 @@
         <div class="form__group-inputs">
       <span class="form__label-input">
       <label for="nombre">Nombre: </label>
-      <input type="text" name="nombre" id="nombre"
-             value="${animalAEditar.nombre}"/>
+      <input type="text" class="form__input" name="nombre" id="nombre"
+             value="${animalAEditar.nombre}" required/>
         </span>
           <span class="form__label-input">
       <label for="especie">Especie: </label>
-      <input type="text" name="especie" id="especie"
-             value="${animalAEditar.especie}"/>
+      <input type="text" class="form__input" name="especie" id="especie"
+             value="${animalAEditar.especie}" required/>
         </span>
           <span class="form__label-input">
       <label for="raza">Raza: </label>
-      <input type="text" name="raza" id="raza"
-             value="${animalAEditar.raza}"/>
+      <input type="text" class="form__input" name="raza" id="raza"
+             value="${animalAEditar.raza}" required/>
         </span>
           <span class="form__label-input">
       <label for="nacimiento">Fecha de nacimiento: </label>
-      <input type="text" name="nacimiento" id="nacimiento"
-             value="${animalAEditar.nacimiento}"/>
+      <input type="text" class="form__input" name="nacimiento" id="nacimiento"
+             value="${animalAEditar.nacimiento}" required/>
         </span>
           <input class="form__input" id="file" type="file" accept="image/*"/>
           <input type="hidden" id="fotoBase64" name="fotoBase64"

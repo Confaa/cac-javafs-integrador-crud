@@ -5,19 +5,19 @@
               <p class="card__species">${param.especie}</p>
                 <span class="group-buttons group-buttons--row">
               <a
-                  class="group-buttons__button group-buttons__button--watch"
+                  class="group-buttons__button group-buttons__button--watch group-buttons__button--w-100"
                   href="${pageContext.request.contextPath}/app?action=watch&id=${param.id}"
               >
                 Ver
               </a>
               <a
-                  class="group-buttons__button group-buttons__button--modify"
+                  class="group-buttons__button group-buttons__button--modify group-buttons__button--w-100"
                   href="${pageContext.request.contextPath}/app?action=edit&id=${param.id}"
               >
                 Modificar
               </a>
                 <a
-                    class="group-buttons__button group-buttons__button--delete"
+                    class="group-buttons__button group-buttons__button--delete group-buttons__button--w-100"
                     href="${pageContext.request.contextPath}/app?action=remove&id=${param.id}"
                 >
                 Borrar
